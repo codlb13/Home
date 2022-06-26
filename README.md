@@ -20,3 +20,12 @@ Motherboard - SuperMicro X9DR7-LN4F
 RAM - 64 GB
 LSI Raid Controller - 9285-8e - 88 TB RAID 5
 LSI Raid Controller - 9260-8i - 149 TB RAID 5
+
+Applications
+Docker
+Portainer
+Sonarr
+Radarr
+Overseerer
+NZBGet
+Plex
