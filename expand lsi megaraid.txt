@@ -1,0 +1,15 @@
+Thought I'd mention how I managed to expand the RAID 5 array on my Fujitsu Primergy TX200 S6 server. It uses an LSI MegaRAID controller.
+
+My server runs VMware Hypervisor 5.5 so to configure the RAID I used the LSI WebBIOS utility which you load by pressing CTRL-H at boot time.
+
+The server had 4 x 300 GB 10k SAS drives. I wanted to expand the array by adding a new drive.
+
+Finding the correct menu option from the WebBIOS utility took considerable time. What you do is go into the Virtual Disks option from the left hand menu and then select Adv Opers (Advanced Operations). The Advanced Operations options allow you to change the RAID type and add drives to an existing array.
+
+If you are keeping the RAID type the same, just choose to add the new drive. For a new drive to be added, its status needs to be "unconfigured good".
+
+Adding a drive to an existing RAID 5 array will not lead to any loss of data. However, it will take hours (6 to 8) to rebuild the array. This is because the data needs to be striped across additional drives.
+
+Adding an extra drive to a RAID 5 array will give you an additional unformatted partition.  It won't expand the existing partition. However, the good news is that you can use the VSphere Client to simply increase the size of your existing DataStore so long as the extra space is adjacent to the existing extent.
+
+The additional drive was a used one I found on ebay so before adding it to the existing array I set it up as a separate virtual drive and used it for a new DataStore. I then copied some virtual machines to it and powered up one of them. Not exactly a thorough test but it did show that the drive had no glaring errors.  I then deleted the new DataStore and unmounted it before deleting the new virtual drive using the WebBIOS utility.
