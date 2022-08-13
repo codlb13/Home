@@ -1,0 +1,16 @@
+InfluxDB wont start stuck in loop
+
+
+
+    Edit the file /etc/systemd/system/influxd.service
+
+    Find the line "Type=forking" and comment it out by putting a '#" in front:
+    Restart=on-failure
+    #Type=forking
+    PIDFile=/var/lib/influxdb/influxd.pid
+
+    sudo systemctl daemon-reload
+
+    Now you should be able to "sudo systemctl start influxdb"
+
+The file path for step 1 might be different based on the specific Linux variant you're running, but it should be a pretty similar spot.
