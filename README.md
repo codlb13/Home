@@ -13,7 +13,7 @@ G3 Instant
 
 Server Hardware
 
-Goliath 192.168.3.131
+Goliath 
 
 CPU - Xeon E5-2690 * 2
 Motherboard - SuperMicro X9DR7-LN4F
