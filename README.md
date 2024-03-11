@@ -18,14 +18,18 @@ Goliath
 CPU - Xeon E5-2690 * 2
 Motherboard - SuperMicro X9DR7-LN4F
 RAM - 64 GB
-LSI Raid Controller - 9285-8e - 88 TB RAID 5
+LSI Raid Controller - 9285-8e - 135 TB RAID 5
 LSI Raid Controller - 9260-8i - 149 TB RAID 5
 
 Applications
 Docker
 Portainer
+
+HomeAssistant
+Nginx Proxy Manager
 Sonarr
 Radarr
 Overseerer
 NZBGet
 Plex
+WireGuard
